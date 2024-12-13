@@ -1,0 +1,12 @@
+{
+  "name": "@tiptap/docs",
+  "private": true,
+  "devDependencies": {
+    "vitepress": "^1.5.0"
+  },
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  }
+}

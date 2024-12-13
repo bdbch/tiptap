@@ -3,6 +3,7 @@
   "packageManager": "npm@10.9.1",
   "workspaces": [
     "demos",
+    "docs",
     "shared/*",
     "packages/*"
   ],
