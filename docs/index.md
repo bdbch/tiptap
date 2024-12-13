@@ -3,16 +3,13 @@
 layout: home
 
 hero:
-  name: "Tiptap Editor Docs"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "Tiptap Editor"
+  text: "Documentation"
+  tagline: "The headless editor framework for web artisans."
   actions:
     - theme: brand
       text: Getting started
       link: /getting-started/installation
-    - theme: alt
-      text: API Examples
-      link: /api-examples
 
 features:
   - title: Feature A
