@@ -5,12 +5,6 @@ export class MigrationManager {
   private editor: Editor
 
   /**
-   * The most recent migration version, defaults to -1 if no migrations have been added
-   * @private
-   */
-  private mostRecentMigrationVersion: number = -1
-
-  /**
    * A raw list of migrations with versions
    * @private
    */
@@ -22,6 +16,25 @@ export class MigrationManager {
    */
   public get migrations() {
     return this.rawMigrations.sort((a, b) => a.version - b.version)
+  }
+
+  /**
+   * The most recent migration version, defaults to -1 if no migrations have been added
+   * @public
+   */
+  public get latestVersion() {
+    return this.migrations.length > 0 ? this.migrations[this.migrations.length - 1].version : -1
+  }
+
+  /**
+   * Whether the current document requires an upgrade
+   * @public
+   */
+  public get requiresUpgrade() {
+    const latestDocVersion = this.editor.state.doc.attrs.migrationVersion
+      ? this.editor.state.doc.attrs.migrationVersion
+      : -1
+    return latestDocVersion < this.latestVersion
   }
 
   constructor(editor: Editor) {
